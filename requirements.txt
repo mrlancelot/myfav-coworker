@@ -4,3 +4,6 @@ httpx
 gitpython
 pydantic-ai
 google-generativeai
+mcp
+mcp[cli]
+logging
