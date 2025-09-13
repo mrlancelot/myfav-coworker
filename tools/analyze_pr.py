@@ -86,30 +86,8 @@ async def analyze(pr_ref, repo_path=None):
         logging.warning(f"AI analysis failed: {e}")
         ai_summary = f"PR #{pr_info['number']}: {pr_info['title']} - {len(pr_info.get('files', []))} files changed"
     
-    # Categorize files for compatibility
-    ui_files = []
-    api_files = []
-    
-    for file in pr_info.get('files', []):
-        name = file['path']
-        if name.endswith(('.tsx', '.jsx', '.js')) and not name.endswith('.test.js'):
-            ui_files.append(name)
-        elif name.endswith('.py'):
-            api_files.append(name)
-    
-    change_type = 'none'
-    if ui_files and api_files:
-        change_type = 'both'
-    elif ui_files:
-        change_type = 'ui'
-    elif api_files:
-        change_type = 'api'
-    
     return {
         'pr_number': pr_info['number'],
         'summary': ai_summary,
-        'change_type': change_type,
-        'ui_files': ui_files,
-        'api_files': api_files,
         'base_branch': pr_info['baseRefName']
     }
