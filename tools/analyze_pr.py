@@ -54,6 +54,7 @@ def get_pr_analyzer():
         - Key functionality being added, modified, or removed
         - Impact on the codebase (new features, bug fixes, refactoring, etc.)
         - Any notable patterns or architectural changes
+        - Only code changes that are relevant, not comments or formatting changes
         
         Provide a single paragraph summary that gives developers good context about what this PR accomplishes.
         Be specific about the changes but keep it concise and readable."""
