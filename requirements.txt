@@ -2,3 +2,5 @@ mcp
 pyyaml
 httpx
 gitpython
+pydantic-ai
+google-generativeai
