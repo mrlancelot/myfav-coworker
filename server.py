@@ -7,12 +7,13 @@ from tools.api_tester import run_api_tests
 mcp = FastMCP("My Favorite Coworker")
 
 @mcp.tool()
-def analyze_pr(pr_ref: str) -> dict:
+async def analyze_pr(pr_ref: str, repo_path: str = None) -> dict:
     """Analyze a GitHub PR to determine change types and files affected.
     Args:
         pr_ref: PR number or current branch
+        repo_path: Path to the git repository (defaults to current directory)
     """
-    return analyze(pr_ref)
+    return await analyze(pr_ref, repo_path)
 
 @mcp.tool()
 def test_ui_changes(pr_number: int, ui_files: list[str], base_url: str = "http://localhost:3000") -> dict:
@@ -35,4 +36,4 @@ def test_api_changes(pr_number: int, api_files: list[str], base_url: str = "http
     return run_api_tests(pr_number, api_files, base_url)
 
 if __name__ == "__main__":
-    mcp.run()
+    mcp.run(transport="stdio")

@@ -1,6 +1,7 @@
 import subprocess
 import json
 import os
+import logging
 from utils.github_client import comment_on_pr
 
 def run_ui_tests(pr_number, ui_files, base_url='http://localhost:3000'):
@@ -31,7 +32,7 @@ def run_ui_tests(pr_number, ui_files, base_url='http://localhost:3000'):
             screenshots.append(f'/tmp/{component_name}.png')
 
         except Exception as e:
-            print(f"UI test error for {file}: {e}")
+            logging.error(f"UI test error for {file}: {e}")
 
     test_results = {
         'success': len(screenshots) > 0,
