@@ -28,6 +28,11 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
+2. Install GitHub CLI:
+```bash
+brew install gh
+```
+
 2. Configure GitHub CLI:
 ```bash
 gh auth login
