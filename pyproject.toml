@@ -1,0 +1,8 @@
+[project]
+name = "myfav-coworker"
+version = "1.0.0"
+description = "MCP server for automated PR review with UI and API testing"
+
+[mcp]
+name = "myfav-coworker"
+description = "Automated PR review assistant"

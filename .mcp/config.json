@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "myfav-coworker": {
+      "command": "/Users/pridhvi/Documents/Github/myfav-coworker/venv/bin/python",
+      "args": ["/Users/pridhvi/Documents/Github/myfav-coworker/server.py"],
+      "env": {
+        "PYTHONPATH": "/Users/pridhvi/Documents/Github/myfav-coworker"
+      }
+    }
+  }
+}
